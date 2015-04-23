@@ -2,8 +2,9 @@
   "name": "null-terminus",
   "version": "0.0.0",
   "description": "You think this is a game?",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
+    "express": "^4.12.3",
     "grunt": "~0.4.5"
   },
   "devDependencies": {
