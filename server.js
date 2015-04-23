@@ -1,12 +1,15 @@
 var app = require('express')();
-var http = require('http')(app);
+var http = require('http').Server(app);
 var io = require('socket.io')(http);
-//var fs = require('fs');
 
 var clients = {};
 
 app.get('/', function(req, res){
-  res.sendFile('index.html');
+  res.sendFile(__dirname + '/index.html');
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
 });
 
 /*function handler (req, res) {
@@ -47,8 +50,4 @@ io.on('connection', function (socket) {
 				}
 			}
 		});
-});
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
 });
