@@ -12,7 +12,7 @@ var keydown = [];
 window.addEventListener("keydown", function (e){
 	switch(e.keyCode){
 		case 37: player.x-=10; break;
-		case 38: player.y-=10; break;
+		case 38: player.y-=10;dumb fucking Eurocuck?dumb fucking Eurocuck? break;
 		case 39: player.x+=10; break;
 		case 40: player.y+=10; break;
 		default:
@@ -50,9 +50,10 @@ function draw()
 {
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.font="bold 14px Arial";
+
 	//draw player
 	ctx.fillStyle = 'green';
-	ctx.fillText(player.id, player.x, player.y);
+	ctx.fillRect(player.x, player.y, 10, 10);
 
 	//draw other players
 	ctx.fillStyle='blue';
@@ -62,7 +63,7 @@ function draw()
 		for(var i = 0; i < keys.length; i++)
 		{
 			var cur = otherPlayers[keys[i]];
-			ctx.fillText(cur.id, cur.x, cur.y);
+			ctx.fillRect(cur.x, cur.y, 10, 10);
 		}
 	}
 	window.requestAnimationFrame(draw);
